@@ -88,16 +88,6 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         self.present(alertController, animated: true, completion:nil)
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView,
-                                  willDecelerate decelerate: Bool) {
-        if (scrollView.contentOffset.y + scrollView.frame.size.height) >= (scrollView.contentSize.height) {
-            if viewModel.isAllDataLoaded {
-                self.viewModel.page += 1
-                self.loadAPIData()
-            }
-        }
-    }
-    
 }
 
 extension ViewController {
